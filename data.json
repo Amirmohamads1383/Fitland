@@ -1,0 +1,587 @@
+[
+  {
+    "id": 1,
+    "title": "کفش نایک مدل S-2000",
+    "price": 1290000,
+    "category": "shoes",
+    "categorypersian": "کفش ورزشی مردانه",
+    "image": "/image/product/shoes-1.png",
+    "gallery": [
+      "/image/product/shoes-1.png",
+      "/image/product/shoes-1-1.webp",
+      "/image/product/shoes-1-2.webp",
+      "/image/product/shoes-1-3.webp",
+      "/image/product/shoes-1-4.webp",
+      "/image/product/shoes-1-5.webp",
+      "/image/product/shoes-1-6.webp"
+    ],
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "#000000",
+      "#ffffff",
+      "#ff208b"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 34
+  },
+  {
+    "id": 2,
+    "title": "کفش اسپرت مدل Runner",
+    "price": 980000,
+    "category": "shoes",
+    "categorypersian": "کفش ورزشی مردانه",
+    "image": " /image/product/shoes-2.jpg",
+    "gallery": [
+      " /image/product/shoes-2.jpg",
+      " /image/product/shoes-2.jpg"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "#ff208b",
+      "#fa541c"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 3,
+    "title": "نایک مدل AO-14",
+    "price": 750000,
+    "category": "shoes",
+    "categorypersian": "کفش ورزشی مردانه",
+    "image": " /image/product/shoes-3.png",
+    "gallery": [
+      " /image/product/shoes-3.png",
+      " /image/product/shoes-3.png"
+    ],
+    "sizes": [
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "#000000",
+      "#fff"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 4,
+    "title": "کفش نایک مدل 2024 Small",
+    "price": 1650000,
+    "category": "shoes",
+    "categorypersian": "کفش ورزشی مردانه",
+    "image": " /image/product/shoes-4.png",
+    "gallery": [
+      " /image/product/shoes-4.png",
+      " /image/product/shoes-4.png"
+    ],
+    "sizes": [
+      "40",
+      "41",
+      "42"
+    ],
+    "colors": [
+      "#fbf43c",
+      "#000000"
+    ],
+    "sale": false,
+    "vip": true,
+    "discountPercent": 16
+  },
+  {
+    "id": 5,
+    "title": "کفش روزمره زنانه مدل SoftWalk",
+    "price": 890000,
+    "category": "shoes",
+    "categorypersian": "کفش ورزشی مردانه",
+    "image": " /image/product/shoes-5.png",
+    "gallery": [
+      " /image/product/shoes-5.png",
+      " /image/product/shoes-5.png"
+    ],
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39"
+    ],
+    "colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 6,
+    "title": "کفش بندی کلاسیک مردانه",
+    "price": 1420000,
+    "category": "shoes",
+    "categorypersian": "کفش ورزشی مردانه",
+    "image": " /image/product/shoes-6.png",
+    "gallery": [
+      " /image/product/shoes-6.png",
+      " /image/product/shoes-6.png"
+    ],
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "brown",
+      "dark-brown"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 7,
+    "title": "کفش اسپرت مردانه مدل Urban",
+    "price": 1100000,
+    "category": "shoes",
+    "categorypersian": "کفش ورزشی مردانه",
+    "image": " /image/product/shoes-7.png",
+    "gallery": [
+      " /image/product/shoes-7.png",
+      " /image/product/shoes-7.png"
+    ],
+    "sizes": [
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "black",
+      "blue"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 8,
+    "title": "لباس زنانه مجلسی مدل Rose",
+    "price": 1080000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-1.png",
+    "gallery": [
+      " /image/product/wshirt-1.png",
+      " /image/product/wshirt-1.png"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "red",
+      "black"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 9,
+    "title": "تی‌شرت زنانه طرح ساده",
+    "price": 240000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-2.png",
+    "gallery": [
+      " /image/product/wshirt-2.png"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "white",
+      "pink",
+      "gray"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 10,
+    "title": "شلوار زنانه مدل Elegant",
+    "price": 520000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-3.png",
+    "gallery": [
+      " /image/product/wshirt-3.png"
+    ],
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "colors": [
+      "black"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 11,
+    "title": "هودی زنانه جلو بسته",
+    "price": 460000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-4.png",
+    "gallery": [
+      " /image/product/wshirt-4.png"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "white",
+      "gray",
+      "pink"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 12,
+    "title": "سارافون زنانه مدل Summer",
+    "price": 660000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-5.png",
+    "gallery": [
+      " /image/product/wshirt-5.png"
+    ],
+    "sizes": [
+      "S",
+      "M"
+    ],
+    "colors": [
+      "yellow",
+      "white"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 13,
+    "title": "کت و شلوار زنانه رسمی",
+    "price": 1780000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-6.png",
+    "gallery": [
+      " /image/product/wshirt-6.png"
+    ],
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "colors": [
+      "black",
+      "cream"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 14,
+    "title": "مانتو بلند زنانه مدل کلاسیک",
+    "price": 890000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-7.png",
+    "gallery": [
+      " /image/product/wshirt-7.png"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "navy",
+      "black"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 15,
+    "title": "شومیز زنانه مدل Velvet",
+    "price": 390000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-8.png",
+    "gallery": [
+      " /image/product/wshirt-8.png"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "pink",
+      "white"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 16,
+    "title": "پیراهن زنانه مدل Floral",
+    "price": 710000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-9.png",
+    "gallery": [
+      " /image/product/wshirt-9.png"
+    ],
+    "sizes": [
+      "S",
+      "M"
+    ],
+    "colors": [
+      "green",
+      "white"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 17,
+    "title": "شلوار جین زنانه",
+    "price": 430000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-10.png",
+    "gallery": [
+      " /image/product/wshirt-10.png"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 18,
+    "title": "تی‌شرت یقه‌گرد زنانه",
+    "price": 210000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-11.png",
+    "gallery": [
+      " /image/product/wshirt-11.png"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "white",
+      "yellow"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 19,
+    "title": "ژاکت زنانه پاییزه",
+    "price": 650000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-12.png",
+    "gallery": [
+      " /image/product/wshirt-12.png"
+    ],
+    "sizes": [
+      "M",
+      "L"
+    ],
+    "colors": [
+      "brown",
+      "cream"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 20,
+    "title": "شلوار راحتی زنانه",
+    "price": 290000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-13.png",
+    "gallery": [
+      " /image/product/wshirt-13.png"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "gray",
+      "pink"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 21,
+    "title": "پیراهن زنانه مدل Paris",
+    "price": 920000,
+    "category": "womenshirt",
+    "categorypersian": "لباس زنانه",
+    "image": " /image/product/wshirt-13.png",
+    "gallery": [
+      " /image/product/wshirt-13.png"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "xxl"
+    ],
+    "colors": [
+      "red",
+      "white"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 22,
+    "title": "دوچرخه کوهستان مدل Xtreme",
+    "price": 4800000,
+    "category": "bicycle",
+    "categorypersian": "دوچرخه",
+    "image": " /image/product/bike-1.jpg",
+    "gallery": [
+      " /image/product/bike-1.jpg",
+      " /image/product/bike-1.jpg"
+    ],
+    "sizes": [
+      "26",
+      "27"
+    ],
+    "colors": [
+      "black",
+      "green"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 23,
+    "title": "دوچرخه جاده مدل SpeedLine",
+    "price": 6200000,
+    "category": "bicycle",
+    "categorypersian": "دوچرخه",
+    "image": " /image/product/bike-2.jpg",
+    "gallery": [
+      " /image/product/bike-2.jpg"
+    ],
+    "sizes": [
+      "28"
+    ],
+    "colors": [
+      "red",
+      "black"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 24,
+    "title": "دوچرخه شهری مدل Classic",
+    "price": 3500000,
+    "category": "bicycle",
+    "categorypersian": "دوچرخه",
+    "image": " /image/product/bike-3.jpg",
+    "gallery": [
+      " /image/product/bike-3.jpg"
+    ],
+    "sizes": [
+      "26"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sale": false,
+    "vip": false,
+    "discountPercent": 0
+  },
+  {
+    "id": 25,
+    "title": "دوچرخه شهری مدل Classic",
+    "price": 3500000,
+    "category": "bicycle",
+    "categorypersian": "دوچرخه",
+    "image": " /image/product/bike-4.webp",
+    "gallery": [
+      " /image/product/bike-4.webp"
+    ],
+    "sizes": [
+      "26"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sale": true,
+    "vip": false,
+    "discountPercent": 19
+  }
+]

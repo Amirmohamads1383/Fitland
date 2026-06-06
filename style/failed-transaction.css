@@ -1,0 +1,165 @@
+.failed-transaction-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-history-red1);
+    border-radius: var(--size-x);
+    -webkit-border-radius: var(--size-x);
+    -moz-border-radius: var(--size-x);
+    -ms-border-radius: var(--size-x);
+    -o-border-radius: var(--size-x);
+}
+
+.failed-transaction-container .failed-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--size-4x);
+}
+
+.failed-text-container .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--size-4x);
+}
+
+.failed-text-container .title-container .failed-title h1 {
+    font-family: var(--font-family-DemiBold);
+    font-size: var(--size-4x);
+    color: var(--color-error-2);
+}
+
+.failed-text-container .title-container .failed-text p,
+.failed-text-container .title-container .code-interception-container span,
+.failed-text-container .title-container .code-interception-container h2 {
+    font-family: var(--font-family-Medium);
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: var(--color-error-2);
+}
+
+.failed-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.failed-text-container .title-container .failed-text p {
+    line-height: var(--size-4x);
+    width: 55%;
+}
+
+.failed-text-container .title-container .code-interception-container {
+    display: flex;
+    align-items: center;
+    gap: var(--size-x);
+    padding-bottom: 20px;
+}
+
+.failed-text-container .btn-container {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3x);
+}
+
+.failed-text-container .btn-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-x);
+    padding: 12px 37.5px;
+    font-family: var(--font-family-Medium);
+    font-size: var(--size-2x);
+    color: var(--color-Neutral-white);
+    background: var(--color-Secondary-400);
+    border-radius: var(--size-x);
+    border: 1px solid;
+    -webkit-border-radius: var(--size-x);
+    -moz-border-radius: var(--size-x);
+    -ms-border-radius: var(--size-x);
+    -o-border-radius: var(--size-x);
+}
+
+.failed-text-container .btn-container .back-home {
+    color: var(--color-Secondary-400);
+    background: transparent;
+    border: 2px solid var(--color-Secondary-400);
+}
+
+.failed-image-container .failed-image-lg {
+    width: 392px;
+    height: 402px;
+    margin-left: 65px;
+    object-fit: cover;
+}
+
+.failed-image-container .failed-image-xs {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .failed-transaction-container {
+        flex-direction: column-reverse;
+        gap: var(--size-4x) !important;
+        background: transparent !important;
+    }
+
+    .failed-text-container .title-container {
+        align-items: normal !important;
+    }
+
+    .failed-title {
+        order: 1;
+    }
+
+    .failed-text {
+        order: 3;
+    }
+
+    .failed-text-container .title-container .failed-title h1 {
+        font-family: var(--font-family-Medium) !important;
+        font-size: var(--size-3x) !important;
+        font-weight: 500 !important;
+        text-align: center;
+    }
+
+    .failed-text-container .title-container .failed-text p {
+        width: 100% !important;
+        order: 3;
+        font-size: var(--size-2x);
+        font-family: var(--font-family-Regular);
+        font-weight: 400;
+        text-align: justify !important;
+        color: var(--color-Neutral-black);
+    }
+
+    .failed-text-container .title-container .code-interception-container {
+        order: 2;
+        padding: 15px 0 !important;
+        text-align: center !important;
+        border-top: 2px dashed var(--color-error-2) !important;
+        justify-content: center !important;
+    }
+
+    .failed-text-container .btn-container {
+        flex-direction: column-reverse !important;
+        width: 100% !important;
+        align-items: normal !important;
+    }
+
+    .failed-image-container .failed-image-lg {
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .failed-image-container .failed-image-xs {
+        display: block !important;
+    }
+}

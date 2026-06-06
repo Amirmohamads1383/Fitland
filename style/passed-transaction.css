@@ -1,0 +1,174 @@
+.passed-transaction-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-history-green);
+    border-radius: var(--size-x);
+    -webkit-border-radius: var(--size-x);
+    -moz-border-radius: var(--size-x);
+    -ms-border-radius: var(--size-x);
+    -o-border-radius: var(--size-x);
+}
+
+.passed-transaction-container .passed-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--size-4x);
+    padding: var(--size-5x) 0;
+}
+
+.passed-text-container .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--size-4x);
+}
+
+.passed-text-container .title-container .passed-title{
+    display: flex;
+}
+
+.passed-text-container .title-container .passed-title h1 {
+    font-family: var(--font-family-DemiBold);
+    font-size: var(--size-4x);
+    color: var(--color-success-3);
+    flex-shrink: 0;
+}
+
+.passed-text-container .title-container .passed-text p,
+.passed-text-container .title-container .code-interception-container span,
+.passed-text-container .title-container .code-interception-container h2 {
+    font-family: var(--font-family-Medium);
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: var(--color-success-3);
+}
+
+.passed-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.passed-text-container .title-container .passed-text p {
+    line-height: var(--size-4x);
+    width: 55%;
+}
+
+.passed-text-container .title-container .code-interception-container {
+    display: flex;
+    align-items: center;
+    gap: var(--size-x);
+    padding-bottom: 20px;
+}
+
+.passed-text-container .btn-container {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3x);
+}
+
+.passed-text-container .btn-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-x);
+    padding: 12px 37.5px;
+    font-family: var(--font-family-Medium);
+    font-size: var(--size-2x);
+    color: var(--color-Neutral-white);
+    background: var(--color-Secondary-400);
+    border-radius: var(--size-x);
+    border: 2px solid var(--color-Secondary-400);
+    -webkit-border-radius: var(--size-x);
+    -moz-border-radius: var(--size-x);
+    -ms-border-radius: var(--size-x);
+    -o-border-radius: var(--size-x);
+}
+
+.passed-text-container .btn-container .back-home {
+    color: var(--color-Secondary-400);
+    background: transparent;
+    border: 2px solid var(--color-Secondary-400);
+}
+
+.passed-image-container .passed-image-lg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.passed-image-container .passed-image-xs {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .passed-transaction-container {
+        flex-direction: column-reverse;
+        gap: var(--size-4x) !important;
+        background: transparent !important;
+    }
+
+    .passed-text-container .title-container {
+        align-items: normal !important;
+    }
+
+    .passed-title {
+        order: 1;
+    }
+
+    .passed-text {
+        order: 3;
+    }
+
+    .passed-text-container .title-container .passed-title h1 {
+        font-family: var(--font-family-Medium) !important;
+        font-size: var(--size-3x) !important;
+        font-weight: 500 !important;
+        text-align: center;
+    }
+
+    .passed-text-container .title-container .passed-text p {
+        width: 100% !important;
+        order: 3;
+        font-size: var(--size-2x);
+        font-family: var(--font-family-Regular);
+        font-weight: 400;
+        color: var(--color-Neutral-black);
+    }
+
+    .passed-text-container .title-container .code-interception-container {
+        order: 2;
+        padding: 15px 0 !important;
+        text-align: center !important;
+        border-top: 2px dashed var(--color-success-2) !important;
+        justify-content: center !important;
+    }
+
+    .passed-text-container .title-container .code-interception-container span,
+.passed-text-container .title-container .code-interception-container h2{
+    color: var(--color-success-2) !important;
+}
+
+    .passed-text-container .btn-container {
+        flex-direction: column-reverse !important;
+        width: 100% !important;
+        align-items: normal !important;
+    }
+
+    .passed-image-container .passed-image-lg {
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .passed-image-container .passed-image-xs {
+        display: block !important;
+    }
+}

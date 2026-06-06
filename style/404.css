@@ -1,0 +1,56 @@
+.error-404-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-5x);
+}
+
+.error-404-container .error-404-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.error-404-container .error-404-title h1 {
+    font-family: var(--font-family-Medium);
+    font-size: var(--size-3x);
+    font-weight: 500;
+    color: var(--color-Secondary);
+}
+
+.error-404-container .error-404-btn-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-x);
+    padding: 8px 20px;
+    font-family: var(--font-family-Medium);
+    font-size: var(--size-2x);
+    transition: all 0.2s ease-in-out;
+    background-color: var(--color-Secondary-400);
+    color: var(--color-Neutral-white);
+    border-radius: var(--size-x);
+    -webkit-border-radius: var(--size-x);
+    -moz-border-radius: var(--size-x);
+    -ms-border-radius: var(--size-x);
+    -o-border-radius: var(--size-x);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.error-404-container .error-404-btn-container a:hover{
+    color: var(--color-Secondary-400);
+    background-color: var(--color-Neutral-white);
+}
+
+@media (max-width: 768px) {
+    .error-404-container .error-404-title h1 {
+        font-size: 18px !important;
+    }
+
+    .error-404-container .error-404-btn-container a {
+        padding: 16px 67.5px !important;
+    }
+}
