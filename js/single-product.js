@@ -13,10 +13,17 @@ const toastText = document.querySelector(".toast-text");
 const toastProgress = document.querySelector(".progress");
 const countDisplay = document.getElementById("countDisplay");
 const otherProductConatiner = document.querySelector(".product-conatiner");
+const galleryModal = document.querySelector(".gallery-modal");
+const modalContainer = document.querySelector(".gallery-modal-container");
+const modalMainImage = document.getElementById("modalMainImage");
+const modalThumbnails = document.getElementById("modalThumbnails");
 
+let currentImageIndex = 0;
+let currentGalleryImages = [];
 let count = 1;
 let noteBtn = false;
 let isLiked = false;
+let currentProduct = null;
 
 /* Fetching Data  */
 document.addEventListener("DOMContentLoaded", async () => {
@@ -41,11 +48,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
+        currentProduct = product;
+
         const sameCategoryProducts = products.filter(
             (item) => item.categorypersian === product.categorypersian && String(item.id) !== String(productId)
         );
 
-        const relatedProducts = sameCategoryProducts.slice(0,4)
+        const relatedProducts = sameCategoryProducts.slice(0, 4)
 
         singleProductContainer.insertAdjacentHTML("beforeend",
             `
@@ -192,6 +201,11 @@ function initProductEvents() {
     const mainImage = document.querySelector(".main-image-single-product img");
     const thumbnails = document.querySelectorAll(".other-images-single-product");
 
+    if (currentProduct && currentProduct.gallery && currentProduct.gallery.length > 0) {
+        initGalleryEvents(currentProduct.gallery);
+        initThumbnailEvents();
+    }
+
     thumbnails.forEach((thumb) => {
         thumb.addEventListener("click", () => {
             thumbnails.forEach((img) => img.classList.remove("active-single-product-image"));
@@ -248,11 +262,10 @@ window.addProduct = () => {
     if (countDisplay) {
         countDisplay.textContent = count;
     } else {
-        // اگر countDisplay پیدا نشد، دوباره سعی کن پیدا کنی
         const elem = document.getElementById("countDisplay");
         if (elem) elem.textContent = count;
     }
-    console.log("تعداد جدید:", count); // برای دیباگ
+    console.log("تعداد جدید:", count);
 };
 
 /* Remove Product */
@@ -273,7 +286,6 @@ window.removeProduct = () => {
 window.showModal = (event, title, img) => {
     event.preventDefault();
 
-    // دریافت تعداد
     const quantity = parseInt(document.getElementById("countDisplay")?.innerText || "1");
 
     const activeColorCustom = document.querySelector(".active-color-custom>h3");
@@ -301,7 +313,6 @@ window.showModal = (event, title, img) => {
     titlePopupProduct.innerHTML = title;
     imageProductPopup.src = img;
 
-    // دریافت قیمت
     let productPrice = 0;
     const priceElement = document.querySelector(".price-single-product");
     if (priceElement) {
@@ -310,14 +321,12 @@ window.showModal = (event, title, img) => {
         productPrice = parseInt(priceText);
     }
 
-    // دریافت دسته‌بندی محصول
     const categoryElement = document.querySelector(".category-single-product");
     let category = "";
     if (categoryElement) {
         category = categoryElement.innerText;
     }
 
-    // دریافت درصد تخفیف (از المنت discount)
     let discount = 0;
     const discountElement = document.querySelector(".discount");
     if (discountElement) {
@@ -326,14 +335,12 @@ window.showModal = (event, title, img) => {
         discount = parseInt(discountText) || 0;
     }
 
-    // دریافت سایز انتخاب شده
     const activeSize = document.querySelector(".size-box.active-size");
     let selectedSize = "سایز استاندارد";
     if (activeSize) {
         selectedSize = activeSize.innerText;
     }
 
-    // افزودن به مینی کارت
     if (window.addProductToMinicart) {
         window.addProductToMinicart({
             title: title,
@@ -385,6 +392,141 @@ const showToast = () => {
         }
     }, 30);
 };
+
+/* Gallery Modal Functions */
+function openGalleryModal(images, startIndex = 0) {
+    if (!images || images.length === 0) return;
+    if (!galleryModal || !modalMainImage || !modalThumbnails) {
+        console.error("المان‌های مودال پیدا نشدند!");
+        return;
+    }
+
+    currentGalleryImages = images;
+    currentImageIndex = startIndex;
+
+    updateModalImage(currentImageIndex);
+
+    modalThumbnails.innerHTML = images.map((img, index) => `
+        <div class="thumbnail-item ${index === currentImageIndex ? 'active' : ''}" data-index="${index}">
+            <img src="${img}" alt="Thumbnail ${index + 1}">
+        </div>
+    `).join('');
+
+    galleryModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+/* Update Gallery Img */
+function updateModalImage(index) {
+    if (currentGalleryImages[index]) {
+        modalMainImage.src = currentGalleryImages[index];
+
+        document.querySelectorAll('.thumbnail-item').forEach((item, i) => {
+            if (i === index) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+}
+
+/*  */
+function prevImage() {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateModalImage(currentImageIndex);
+    } else if (currentGalleryImages.length > 0) {
+        currentImageIndex = currentGalleryImages.length - 1;
+        updateModalImage(currentImageIndex);
+    }
+}
+
+/*  */
+function nextImage() {
+    if (currentImageIndex < currentGalleryImages.length - 1) {
+        currentImageIndex++;
+        updateModalImage(currentImageIndex);
+    } else if (currentGalleryImages.length > 0) {
+        currentImageIndex = 0;
+        updateModalImage(currentImageIndex);
+    }
+}
+
+/*  */
+function closeGalleryModal() {
+    if (galleryModal) {
+        galleryModal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+}
+
+/*  */
+function initGalleryEvents(productGallery) {
+    const moreImageBtn = document.querySelector(".more-image-single-product");
+
+    if (moreImageBtn && productGallery && productGallery.length > 0) {
+        moreImageBtn.addEventListener("click", () => {
+            openGalleryModal(productGallery, 0);
+        });
+    }
+
+    const otherImages = document.querySelectorAll(".other-images-single-product");
+    otherImages.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            if (productGallery && productGallery[index]) {
+                openGalleryModal(productGallery, index);
+            }
+        });
+    });
+}
+
+/*  */
+function initThumbnailEvents() {
+    if (modalThumbnails) {
+        modalThumbnails.addEventListener("click", (e) => {
+            const thumbnailItem = e.target.closest(".thumbnail-item");
+            if (thumbnailItem) {
+                const index = parseInt(thumbnailItem.dataset.index);
+                if (!isNaN(index)) {
+                    currentImageIndex = index;
+                    updateModalImage(currentImageIndex);
+                }
+            }
+        });
+    }
+}
+
+/*  */
+document.addEventListener("DOMContentLoaded", () => {
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    const closeBtn = document.querySelector(".close-modal");
+
+    if (prevBtn) prevBtn.addEventListener("click", prevImage);
+    if (nextBtn) nextBtn.addEventListener("click", nextImage);
+    if (closeBtn) closeBtn.addEventListener("click", closeGalleryModal);
+
+    if (galleryModal) {
+        galleryModal.addEventListener("click", (e) => {
+            if (e.target === galleryModal) {
+                closeGalleryModal();
+            }
+        });
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (galleryModal && galleryModal.classList.contains("active")) {
+            if (e.key === "ArrowLeft") {
+                prevImage();
+            } else if (e.key === "ArrowRight") {
+                nextImage();
+            } else if (e.key === "Escape") {
+                closeGalleryModal();
+            }
+        }
+    });
+});
 
 if (hideModalBtn) hideModalBtn.addEventListener("click", hideModal);
 if (overlay) overlay.addEventListener('click', hideModal);
