@@ -83,6 +83,14 @@ function createShopProductCard(item) {
         return `<div class="color-pro-box" style="background: ${color};"></div>`;
     }).join("");
 
+    const sortedSizes = sortSizes(item.sizes);
+    let sizeText = "";
+    if (sortedSizes.length > 0) {
+        const firstSize = sortedSizes[0];
+        const lastSize = sortedSizes[sortedSizes.length - 1];
+        sizeText = `از سایز ${firstSize} تا ${lastSize}`;
+    }
+
     return `
         <div class="product">
             <div class="image-product">
@@ -101,13 +109,35 @@ function createShopProductCard(item) {
             `<h3 class="main-price">${(item.price - (item.price / 100) * item.discountPercent).toLocaleString()} تومان</h3><h3 class="price">${item.price.toLocaleString()} تومان</h3>`
             : `<h3 class="main-price">${item.price.toLocaleString()} تومان</h3>`}
                 </div>
-                <span class="size">از سایز M تا 3XL</span>
+                <span class="size">${sizeText}</span>
                 <div class="colors">
                     ${colorBox}
                 </div>
             </div>
         </div>
     `;
+}
+
+function sortSizes(sizes) {
+    const sizeOrder = {
+        'XS': 1, 'S': 2, 'M': 3, 'L': 4, 'XL': 5, 'XXL': 6, 'XXXL': 7,
+        'xs': 1, 's': 2, 'm': 3, 'l': 4, 'xl': 5, 'xxl': 6, 'xxxl': 7
+    };
+
+    return [...sizes].sort((a, b) => {
+        const aIsNumber = !isNaN(parseFloat(a)) && isFinite(a);
+        const bIsNumber = !isNaN(parseFloat(b)) && isFinite(b);
+
+        if (aIsNumber && bIsNumber) {
+            return parseFloat(a) - parseFloat(b);
+        }
+        if (aIsNumber && !bIsNumber) return -1;
+        if (!aIsNumber && bIsNumber) return 1;
+
+        const aOrder = sizeOrder[a] || 100;
+        const bOrder = sizeOrder[b] || 100;
+        return aOrder - bOrder;
+    });
 }
 
 /* دریافت محصولات فیلتر شده */

@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             (item) => item.categorypersian === product.categorypersian && String(item.id) !== String(productId)
         );
 
-        const relatedProducts = sameCategoryProducts.slice(0, 4)
+        const relatedProducts = sameCategoryProducts.slice(0, 4);
 
         singleProductContainer.insertAdjacentHTML("beforeend",
             `
@@ -151,36 +151,45 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (relatedProducts.length > 0) {
             relatedProducts.forEach((relatedItem) => {
+                // محاسبه سایزها برای هر محصول مرتبط
+                const relatedSortedSizes = sortSizes(relatedItem.sizes || []);
+                let relatedSizeText = "";
+                if (relatedSortedSizes.length > 0) {
+                    const firstSize = relatedSortedSizes[0];
+                    const lastSize = relatedSortedSizes[relatedSortedSizes.length - 1];
+                    relatedSizeText = `از سایز ${firstSize} تا ${lastSize}`;
+                }
+
                 const colorBox = relatedItem.colors?.map(color =>
                     `<div class="color" style="background-color: ${color}; width: 20px; height: 20px; border-radius: 50%; display: inline-block;"></div>`
                 ).join("") || "";
 
                 otherProductConatiner.insertAdjacentHTML("beforeend",
                     `
-                    <div class="product">
-                        <div class="image-product">
-                            <img src="${relatedItem.image}" alt="">
-                            <div class="label">
-                               ${relatedItem.vip ? '<span class="vip">vip</span>' : ""}
-                               ${relatedItem.discountPercent > 0 ? `<span class="sale">${relatedItem.discountPercent}%</span>` : ""}
-                            </div>
-                        </div>
-                        <div class="titles-product">
-                            <h3 class="title-product">
-                               <a href="single-product.html?id=${relatedItem.id}">${relatedItem.title}</a>
-                            </h3>
-                            <div class="product-price-container">
-                            ${relatedItem.discountPercent > 0 ?
+            <div class="product">
+                <div class="image-product">
+                    <img src="${relatedItem.image}" alt="">
+                    <div class="label">
+                       ${relatedItem.vip ? '<span class="vip">vip</span>' : ""}
+                       ${relatedItem.discountPercent > 0 ? `<span class="sale">${relatedItem.discountPercent}%</span>` : ""}
+                    </div>
+                </div>
+                <div class="titles-product">
+                    <h3 class="title-product">
+                       <a href="single-product.html?id=${relatedItem.id}">${relatedItem.title}</a>
+                    </h3>
+                    <div class="product-price-container">
+                    ${relatedItem.discountPercent > 0 ?
                         `<h3 class="main-price">${(relatedItem.price - (relatedItem.price / 100) * relatedItem.discountPercent).toLocaleString()} تومان</h3><h3 class="price">${relatedItem.price.toLocaleString()} تومان</h3>`
                         : `<h3 class="main-price">${relatedItem.price.toLocaleString()} تومان</h3>`}
-                            </div>
-                            <span class="size">از سایز L تا XXL</span>
-                            <div class="colors">
-                                ${colorBox}
-                            </div>
-                        </div >
-                    </div >
-                    `
+                    </div>
+                    <span class="size">${relatedSizeText}</span>
+                    <div class="colors">
+                        ${colorBox}
+                    </div>
+                </div>
+            </div>
+            `
                 );
             });
         } else {
@@ -226,6 +235,29 @@ function initProductEvents() {
             document.querySelectorAll(".color-box").forEach((b) => b.classList.remove("active-color-custom"));
             box.classList.add("active-color-custom");
         });
+    });
+}
+
+/* Size */
+const sortSizes = (sizes) => {
+    const sizeOrder = {
+        'XS': 1, 'S': 2, 'M': 3, 'L': 4, 'XL': 5, 'XXL': 6, 'XXXL': 7,
+        'xs': 1, 's': 2, 'm': 3, 'l': 4, 'xl': 5, 'xxl': 6, 'xxxl': 7
+    };
+
+    return [...sizes].sort((a, b) => {
+        const aIsNumber = !isNaN(parseFloat(a)) && isFinite(a);
+        const bIsNumber = !isNaN(parseFloat(b)) && isFinite(b);
+
+        if (aIsNumber && bIsNumber) {
+            return parseFloat(a) - parseFloat(b);
+        }
+        if (aIsNumber && !bIsNumber) return -1;
+        if (!aIsNumber && bIsNumber) return 1;
+
+        const aOrder = sizeOrder[a] || 100;
+        const bOrder = sizeOrder[b] || 100;
+        return aOrder - bOrder;
     });
 }
 
